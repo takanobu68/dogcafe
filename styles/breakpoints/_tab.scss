@@ -1,0 +1,64 @@
+/******************************************************************
+
+// タブレット用スタイル (600px以上 1179px以下で適用)
+
+******************************************************************/
+
+.flex{
+	flex-direction: row;
+	flex-wrap: wrap;
+
+}
+
+.friends{
+
+	&__item{
+		flex-basis: 50%;
+		margin-bottom: 50px;
+	}
+
+}
+
+.news{
+	&__container{
+		justify-content: space-between;
+
+	}
+	&__item{
+		flex-basis: 47%;
+	}
+
+}
+
+.new-member{
+
+	&__inner{
+		padding: 30px;
+		justify-content: space-between;
+	}
+
+	&__texts,
+	&__img{
+		flex-basis: 47%;
+	}
+
+	&__texts{
+		display: flex;
+		align-items: center;
+	}
+}
+
+.footer{
+	& .logo{
+		justify-content: flex-start;
+	}
+
+	&__ul{
+		margin: 0;
+	}
+
+	&__li{
+		margin-left: 0;
+		margin-right: 30px;
+	}
+}

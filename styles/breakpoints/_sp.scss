@@ -1,0 +1,360 @@
+/******************************************************************
+
+// スマホ用スタイル (599pxまでの適用)
+
+******************************************************************/
+
+body{
+	font-family: 'Noto Serif', 'Noto Sans JP', sans-serif;
+}
+
+img{
+	max-width: 100%;
+	vertical-align: bottom;
+}
+
+.font-sm{
+	font-size: 14px;
+}
+
+.font-md{
+	font-size: 17px;
+}
+
+.font-lr{
+	font-size: 17px;
+}
+
+.font-lg{
+	font-size: 25px;
+}
+
+.mb-sm{
+	margin-bottom: 16px !important;
+}
+
+.mb-lg{
+	margin-bottom: 80px !important;
+}
+
+.pb-sm{
+	padding-bottom: 16px !important;
+}
+
+.pb-lg{
+	padding-bottom: 80px !important;
+}
+
+.main-ttl{
+	@extend .font-lg;
+	color: $cMainTtl;
+	font-weight: 600;
+	margin-bottom: 0;
+	display: block;
+}
+
+.sub-ttl{
+	@extend .font-sm;
+	color: $cSubTtl;
+}
+
+.flex{
+	display: flex;
+	flex-direction: column;
+}
+
+
+.content-width{
+	width: 90%;
+	margin: 50px auto;
+	max-width: $contentMaxWidth;
+}
+
+#content{
+	padding-top: 50px;
+}
+
+#main-content{
+	position: relative;
+	z-index: 0;
+}
+
+main{
+	position: relative;
+	z-index: -1;
+}
+
+#container{
+	transition: transform 0.5s,box-shadow 0.5s;
+	background-color: $cWhite;
+	position: relative;
+	z-index: 2;
+}
+
+.header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: $navHeight;
+	background-color: transparent;
+	display: flex;
+	align-items: center;
+	z-index: 10;
+
+	&.triggered{
+		background-color: rgba(255,255,255,0.8);
+		box-shadow: 10px 0 25px -10px rgba(0,0,0,0.5);
+	}
+
+	&__nav{
+		display: none;
+	}
+
+	&__ul{
+		display: flex;
+		align-items: center;
+		margin-bottom: 10px;
+		padding: 0;
+		list-style: none;
+	}
+
+	&__li{
+		margin-left: 30px;
+
+
+		& > a{
+			color: $cBlack;
+			text-transform: uppercase;
+		}
+	}
+
+	& .logo{
+		justify-content: center;
+	}
+
+	&__inner{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@extend .content-width;
+	}
+}
+
+.new-member{
+	@extend .content-width;
+
+	&__inner{
+		@extend .flex;
+		padding: 15px;
+		background-color: $cBgBlue;
+
+	}
+
+	& .main-ttl{
+		color: $cBlack;
+
+		.green{
+			color: $cGreen;
+		}
+
+	}
+
+	&__sub{
+		@extend .mb-sm;
+	}
+
+	&__img{
+		height: 300px;
+		@extend .mb-sm;
+		border-radius: 50%;
+		box-shadow: 3px 5px 10px #f9e900;
+
+		& > img{
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__texts{
+		@extend .pb-sm;
+
+
+	}
+
+	&__texts-inner{
+		text-align: center;
+	}
+
+}
+
+.friends{
+	@extend .content-width;
+
+	&__inner{
+		@extend .flex;
+	}
+
+	&__ttl{
+		@extend .font-lr;
+		@extend .mb-sm;
+		text-align: center;
+	}
+
+	&__btn{
+		text-align: center;
+		flex-basis: 100%;
+	}
+}
+
+.news{
+
+	&__inner{
+		position: relative;
+
+		&::before{
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 90%;
+			background-color: $cBgBlue;
+			z-index: 1;
+		}
+	}
+	&__header{
+		@extend .content-width
+	}
+
+	&__container{
+		@extend .flex;
+		@extend .content-width;
+		position: relative;
+		z-index: 2;
+	}
+
+	&__ttl{
+		@extend .font-md;
+		@extend .mb-sm;
+		text-align: center;
+	}
+
+	&__btn{
+		text-align: center;
+		flex-basis: 100%;
+	}
+
+	&__img{
+		height: 250px;
+		overflow: hidden;
+		margin-bottom: 5px;
+
+		& > img{
+			object-fit: cover;
+			object-position: center;
+			height: 100%;
+			width: 100%;
+		}
+	}
+}
+
+.logo{
+	display: flex;
+
+	&__img{
+		width: 150px;
+	}
+}
+
+.footer{
+	font-size: 20px;
+	padding: 60px 0;
+	@extend .content-width;
+
+	&__nav{
+		@extend .flex;
+		justify-content: space-between;
+		align-items: center;
+		text-align: center;
+	}
+
+	&__ul{
+		@extend .flex;
+		margin-bottom: 10px;
+		padding: 0;
+		list-style: none;
+	}
+
+	&__li{
+		padding: 0;
+		margin: 10px;
+
+		& > a{
+			color: $cBlack;
+		}
+	}
+
+	& .logo{
+		justify-content: center;
+		@extend .mb-sm;
+	}
+
+	&__copyright{
+		font-size: 14px;
+	}
+}
+
+.side{
+	display: none;
+	position: fixed;
+	top: 80%;
+	transform: translateY(-50%);
+
+	& a{
+		color: $cBlack;
+		text-decoration: none !important;
+		margin: 0 20px;
+		vertical-align: middle;
+	}
+	&.left{
+	left: 30px;
+
+		& .side__inner{
+			transform: rotate(-90deg);
+		}
+	}
+
+	&.right{
+		right: 30px;
+
+		& .side__inner{
+			transform: rotate(90deg);
+		}
+
+	}
+}
+
+.icon{
+	position: relative;
+
+	@include p-base($left: -20, $top: 50%, $width: 1em, $height: 1em){
+		transform: translateY(-50%);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+
+	&.twitter{
+		&::before{
+			background-image: url(../images/twitter.svg);
+		}
+	}
+
+	&.fb{
+		&::before{
+			background-image: url(../images/facebook.svg);
+		}
+	}
+}
